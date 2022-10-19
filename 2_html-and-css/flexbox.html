@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic flexbox</title>
+    <style>
+        #parent {
+            background-color: lightblue;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        @media(max-width: 632px) {
+            #parent {
+                flex-direction: column;
+            }
+        }
+
+        .child {
+            display: inline-block;
+            background-color: lightcoral;
+            text-align: center;
+            font-weight: bold;
+            font-size: 22px;
+
+            height: 250px;
+
+            flex-basis: 250px; /* initial size of elements */
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div class="child">one</div>
+        <div class="child">two</div>
+        <div class="child">three has a very long text</div>
+    </div>
+</body>
+
+</html>

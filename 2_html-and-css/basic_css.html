@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic css</title>
+    <style>
+        /* h1 {
+            color: red;
+            background-color: antiquewhite;
+            font-family: sans-serif;
+        } */
+
+        /* .red-background {
+            background-color: rgb(255, 0, 123);
+        } */
+
+        /* #our-special-div {
+            width: 500px;
+            height: 120px;
+
+            background-color: #AAAAAA;
+        } */
+
+        /* div a {
+            color: green;
+        } */
+
+        /* div > a {
+            color: green;
+        } */
+
+        /* a[href="https://www.aau.at"] {
+            color: lightblue;
+            border: 2px dashed violet;
+        } */
+
+        /* a[href*="aau"] {
+            color: lightblue;
+            border: 2px dashed violet;
+        } */
+
+        /* #our-special-div {
+            padding: 12px;
+            border: 3px solid blue;
+            margin-left: 24px;
+
+            position: absolute;
+        } */
+
+        div {
+            background-color: lightcoral;
+            border: 1px solid black;
+        }
+
+        span {
+            display: block;
+            background-color: lightblue;
+            border: 1px solid violet;
+        }
+
+        /* #innerspan {
+            position: absolute;
+            top: 200px;
+            left: 400px;
+        } */
+
+        #innerspan {
+            position: relative;
+            top: 200px;
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Some basic CSS is happening here (soon)</h1>
+    <p>This is the first of two paragraphs</p>
+    <p class="red-background">This is the second of two paragraphs. It even has a <a href="#">link</a> in it!</p>
+
+    <div class="red-background">This is a div <span id="innerspan">that contains a div with a <a href="https://www.google.at">link!</a><span></span></div>
+    </div>
+    <div id="our-special-div">This is another div. It also contains a <a href="https://www.aau.at">link</a></div>
+    <span>Another span just here</span>
+    <span>Another span just here</span>
+
+    <h4>An unordered list: </h4>
+    <ul>
+        <li>First list item</li>
+        <li>Second list item</li>
+    </ul>
+
+    <h4>Another unordered list: </h4>
+    <ul>
+        <li>First list item</li>
+        <li>Second list item</li>
+    </ul>
+</body>
+
+</html>

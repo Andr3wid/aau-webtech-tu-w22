@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML forms</title>
+</head>
+
+<body>
+    <form action="mailto:ourtest@gmx.net" method="POST">
+    <label for="username">Name:</label>
+    <input type="text" placeholder="John Doe" name="username" />
+
+    <br>
+
+    <label for="age">Age:</label>
+    <input name="age" type="number" min="1" max="142" />
+
+    <br>
+
+    <label>Email address:</label>
+    <input name="address" type="email" placeholder="your-email@example.com" />
+
+    <br>
+
+    <input type="submit" value="Send message" />
+    </form>
+</body>
+
+</html>
