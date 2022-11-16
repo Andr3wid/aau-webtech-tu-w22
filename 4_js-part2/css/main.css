@@ -1,0 +1,33 @@
+body {
+    background-image: url(../img/bg-cat.jpg);
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+}
+
+#fact-box {
+    padding: 2vw;
+    border: 3px dashed #ddd;
+    width: fit-content;
+    border-radius: 20px;
+    margin-top: 20vh;
+    margin-left: 50vw;
+    text-align: center;
+    max-width: 30vw;
+}
+
+#get-fact {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 5vh;
+    font-size: 2.2vh;
+}
+
+#get-fact:hover {
+    background-color: #ddd;
+
+}
+
+#fact-box > p {
+    font-size: 3vh;
+}

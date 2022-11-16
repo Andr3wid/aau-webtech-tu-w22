@@ -1,0 +1,32 @@
+body {
+    background-size: cover;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.form-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-form-col, .right-form-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+}
+
+.container {
+        margin-top: 3vh;
+}
+
+tbody > tr:hover {
+    background-color: rgb(223, 233, 255);
+}

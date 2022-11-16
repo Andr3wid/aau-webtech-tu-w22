@@ -1,0 +1,21 @@
+[
+  {
+    "fact": "Most cats had short hair until about 100 years ago, when it became fashionable to own cats and experiment with breeding.",
+    "length": 120
+  },
+  {
+    "fact": "Contrary to popular belief, the cat is a social animal. A pet cat will respond and answer to speech , and seems to enjoy human companionship.",
+    "length": 141
+  },
+  {
+    "fact": "Most cats give birth to a litter of between one and nine kittens. The largest known litter ever produced was 19 kittens, of which 15 survived.",
+    "length": 142
+  },
+  { "fact": "Cats have the largest eyes of any mammal.", "length": 41 },
+  {
+    "fact": "Cats lap liquid from the underside of their tongue, not from the top.",
+    "length": 69
+  },
+  { "fact": "cats have hair", "length": 14 },
+  { "fact": "cats have eyes", "length": 14 }
+]

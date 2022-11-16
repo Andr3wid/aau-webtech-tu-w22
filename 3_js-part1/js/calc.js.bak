@@ -1,0 +1,93 @@
+/*
+    1. Get all values from the input fields
+    2. Create a new table row and append it
+    3. Implement the delete action (showcase "this"!)
+    4. Get stats / sum of our table (higher order functions!)
+*/
+
+let inpCurrency = document.querySelector('input[name="currency"]');
+let inpType = document.querySelector('.right-form-col > select');
+let inpAmount = document.querySelector('input[name="amount"]');
+let inpExchange = document.querySelector('input[name="rate"]');
+
+let btnAddRow = document.querySelector('input[name^="add"]');
+let btnCalcBalance = document.querySelector('input[name^="calc"]');
+
+function getTableCell(value) {
+    const cell = document.createElement('td');
+    cell.innerText = value;
+    return cell;
+}
+
+function getDeleteButton() {
+    const btn = document.createElement('input');
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('value', 'Delete');
+    btn.classList.add('btn', 'btn-danger', 'btn-sm', 'del-button');
+
+    return btn;
+}
+
+// function calculateTotals(tableRows) {
+
+    // let total = 0;
+
+    // let currentCells, currentType, currentValue;
+    // for(let i = 0; i < tableRows.length; i++) {
+        // currentCells = tableRows[i].cells;
+        // currentType = currentCells[2].innerText;
+        // currentValue = Number(currentCells[3].innerText);
+
+        // console.log(`Type: ${currentType} | Value: ${currentValue}`);
+
+        // if(currentType === 'Buy') total -= currentValue;
+        // else if(currentType === 'Sell') total += currentValue;
+        // // else return;
+        
+        // console.log(total);
+        
+    // }
+
+    // return total;
+
+// }
+
+function calculateTotals(tableRows) {
+
+    return Array.from(tableRows).reduce((total, currentRow) => {
+        return currentRow.cells[2].innerText === 'Buy' ? 
+            total -= Number(currentRow.cells[3].innerText) :
+            total += Number(currentRow.cells[3].innerText);
+    }, 0);
+
+}
+
+
+
+function getRowFromFormData() {
+    function deleteRow() {
+        this.parentNode.remove();
+    }
+
+    const row = document.createElement('tr');
+    row.appendChild(getTableCell('#'));
+    row.appendChild(getTableCell(inpCurrency.value));
+    row.appendChild(getTableCell(inpType.value));
+    row.appendChild(getTableCell(inpAmount.value));
+    row.appendChild(getTableCell(inpExchange.value));
+    const btnCell = getTableCell('');
+    btnCell.addEventListener('click', deleteRow);
+    btnCell.appendChild(getDeleteButton());
+    row.appendChild(btnCell);
+    console.log(row);
+    return row;
+}
+
+function addRow() {
+    document.querySelector('table > tbody').appendChild(getRowFromFormData());
+}
+
+btnAddRow.addEventListener('click', addRow);
+btnCalcBalance.addEventListener('click', () => { 
+    alert(calculateTotals(document.querySelectorAll('tbody > tr')));
+});
