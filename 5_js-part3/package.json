@@ -1,0 +1,18 @@
+{
+  "name": "5_js-part3",
+  "version": "1.0.0",
+  "description": "As an introduction to node.js in the WebTech tutorial on the AAU Klagenfurt, we try to resemble the backend from `catfact.ninja/fact` in this project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "Andreas Kogler",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0"
+  }
+}
