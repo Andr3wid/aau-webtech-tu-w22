@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS sample page</title>
+    <style>
+        header {
+            color: white;
+            background-color: black;
+            margin-bottom: 4vh;
+            text-align: center;
+        }
+
+        #navbar {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .nav-item {
+            flex-direction: row;
+            flex-grow: 1;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            color: green;
+        }
+
+        div p {
+            background-color: blue;
+            width: 66%;
+            margin-top: 3vh;
+            margin-bottom: 3vh;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Personal Blog</h1>
+        <p>... by Jon Doe</p>
+        <div id="navbar">
+            <a class="nav-item" href="index.html">
+                Home
+            </a>
+            <a class="nav-item" href="about.html">
+                About
+            </a>
+            <a class="nav-item" href="portfolio.html">
+                Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- main content -->
+    <div>
+        <p class="blogpost">
+            <h3>First post</h3>
+            <p>Some content here</p>
+            <!-- post tags -->
+            <span>interesting</span>
+            <span>new</span>
+            <span>life-advice</span>
+        </p>
+        <p class="blogpost">
+            <h3>Second post</h3>
+            <p>Some content here</p>
+            <!-- post tags -->
+            <span>interesting</span>
+            <span>new</span>
+            <span>life-advice</span>
+        </p>
+    </div>
+</body>
+</html>

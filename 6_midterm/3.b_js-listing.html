@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+
+</head>
+<body>
+    <h1>ToDolist-app</h1>
+    <input type="text" placeholder="Enter todo item here .." id="new-todo-txt" label="new-todo-txt">
+    <input type="button" value="Add to list" id="add-item-btn">
+    <input type="button" value="Clear list" id="clear-list-btn">
+
+    <div id="todo-list">
+        <div class="item">
+            <p>Text of the item goes here</p>
+            <input type="button" value="Delete item" class="delete-item-btn">
+        </div>
+    </div>
+</body>    
+<script defer="true">
+        let clearButton = document.querySelector('#clear-list-btn');
+        let addButton = document.querySelector('#add-item-btn');
+        let todoTxt = document.querySelector('#new-todo-txt');
+        let list = document.querySelector('#todo-list'); 
+
+        clearButton.addEventListener('click', (e) => {
+            list.innerHTML = '';
+        });
+
+        addButton.addEventListener('click', (e) => {
+            let text = todoTxt.value;
+
+            let itemDiv = document.createElement('div');
+            itemDiv.setAttribute('class', 'item');
+
+            let description = document.createElement('p');
+            description.innerText = text;
+
+            let deleteBtn = document.createElement('input');
+            deleteBtn.setAttribute('type', 'button');
+            deleteBtn.setAttribute('value', 'delete item');
+            deleteBtn.classList.add('delete-item-btn');
+
+            deleteBtn.addEventListener('click', (e) => {
+                e.target.parentElement.parentElement.removeChild(itemDiv);
+            });
+
+            itemDiv.appendChild(description);
+            itemDiv.appendChild(deleteBtn);
+
+            list.appendChild(itemDiv);
+
+            todoTxt.value = '';
+        });
+    </script>
+</html>
