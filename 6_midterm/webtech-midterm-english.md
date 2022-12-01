@@ -89,7 +89,12 @@ f. Given the following `body` on a page:
 </body>
 ```
 
-TODO: rewrite HTML, translate question
+Apply CSS to achieve the following styles:
+
+- The `header` section should contain white colored font on a black background. The margin to the next element should be 4vh. Text should be centered.
+- The `navbar` has white background color with a transparency of 50%. The corners are rounded with a radius of 10px.
+- All `nav-items` are distributed evenly across the width of the parent element, are not underlined and turn their font color from black to green if hovered.
+- All blogposts (`p` elements in second `div`) should have an alternating background-color of grey and white. Further, they should occupy 66% of the screen width and maintain a top and bottom margin of 3vh.
 
 ## 3. Basic JavaScript
 
@@ -98,17 +103,22 @@ a. Explain the difference between `var` and `let` in JavaScript
 **Listing 1**
 
 ```html
-    <h1>ToDolist-app</h1>
-    <input type="text" placeholder="Enter todo item here .." id="new-todo-txt" label="new-todo-txt">
-    <input type="button" value="Add to list" id="add-item-btn">
-    <input type="button" value="Clear list" id="clear-list-btn">
+<h1>ToDolist-app</h1>
+<input
+  type="text"
+  placeholder="Enter todo item here .."
+  id="new-todo-txt"
+  label="new-todo-txt"
+/>
+<input type="button" value="Add to list" id="add-item-btn" />
+<input type="button" value="Clear list" id="clear-list-btn" />
 
-    <div id="todo-list">
-        <div class="item">
-            <p>Text of the item goes here</p>
-            <input type="button" value="Delete item" class="delete-item-btn">
-        </div>
-    </div>
+<div id="todo-list">
+  <div class="item">
+    <p>Text of the item goes here</p>
+    <input type="button" value="Delete item" class="delete-item-btn" />
+  </div>
+</div>
 ```
 
 b. Write down a tag you would use to include a JavaScript file that exists in `js/custom/cms.js`.
@@ -117,9 +127,192 @@ c. Implement the functionality of the button with id `add-item-btn`. Clicking on
 
 d. Ensure that a click on `delete-item-btn` deletes the respective ToDo-item and `clear-list-btn` clears the entire ToDo-list.
 
-TODO: question e onwards
+Given the following **Listing 2**:
+
+```html
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Currency</th>
+      <th scope="col">Type</th>
+      <th scope="col">Amount in €</th>
+      <th scope="col">Exchange rate</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>#</td>
+      <td>Bitcoin</td>
+      <td>Buy</td>
+      <td>100</td>
+      <td>12345</td>
+      <td>
+        <input
+          type="button"
+          class="btn btn-danger btn-sm delete-btn"
+          value="Delete"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>Bitcoin</td>
+      <td>Sell</td>
+      <td>4000</td>
+      <td>78910</td>
+      <td>
+        <input
+          type="button"
+          class="btn btn-danger btn-sm delete-btn"
+          value="Delete"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+
+f. Use JavaScript to calculate the total balance of investments from the table in Listing 2. Note that rows with a `Buy` decrease the overall balance because money is spent, `Sell` increases the overall balance because money is gained.
+
+Example:
+
+```
+Buy 100
+Buy 200
+Sell 800
+--> total of 500 (-100 -200 +800)
+```
+
+g. What is the output of the following JS code:
+```javascript
+function foo() {
+    myVar = 100;
+}
+function bar() {
+    let anotherOne = 1000;
+}
+console.log(myVar);
+console.log(anotherOne);
+```
+
+h. What is the output of the following JS code:
+```javascript
+if(0 == '' && null == undefined && !(NaN == NaN)) {
+    console.log('weird stuff...');
+} else {
+    console.log('all good');
+}
+```
+
+i. Write a higher-order function with name `logAroundFunction` that receives an arbitrary `function` as a parameter and adds a `log` statement before / after executing the given function.
+
+j. What is the output of the following JS code:
+```javascript
+function cMult(x, y) {
+    const multiplyByAdding = function (num, times) {
+result = 0;
+        for(let i = 1; i <= times; i++) {
+            result = result + num;
+} }
+    if(y === undefined) {
+        return (ry) => {
+            multiplyByAdding(x, ry);
+            return result;
+        }
+    } else {
+        multiplyByAdding(x, y);
+        return result;
+} }
+let multResult = cMult(10);
+console.log(multResult);
+console.log(multResult(10));
+```
+
+k. Write a constructor function that creates an Object `Person` with the following attributes:
+
+- firstname
+- lastname
+- gender
+- age
+- isStudent
+- isWorking
+
+Besides, every person should have a method `introduce()` that prints `Hello, my name is <firstname> <lastname>.` to the console. Take care that the method isn't stored separately in memory for every created object.
+
+l. Translate the constructor function from question k with ES6 class syntax.
+
+m. What is the output of below JS code, if the `Person` with name `Susi` is selected and the user clicks on the button?
+
+```html
+-- index.html
+<input type="button" value="introduce" id="introduce-btn" name="intr-btn">
+<select id="persons" name="prsn">
+</select>
+```
+
+```javascript
+-- foo.js (eingebunden in index.html)
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+}
+    introduce() {
+        console.log(`Hello my name is ${this.name} and I am ${this.age}
+years old`);
+    }
+}
+
+function parsePersonArrayToOptionArray(personObjects) {
+    let el;
+    return personObjects.map((person, personIdx) => {
+        el = document.createElement('option');
+        el.setAttribute('value', personIdx);
+        el.innerText = person.name;
+        return el;
+    });
+}
+
+let personObjects = [];
+personObjects.push(new Person('Hugo', 22));
+personObjects.push(new Person('Susi', 25));
+
+let personDropdown = document.querySelector('#persons');
+parsePersonArrayToOptionArray(personObjects).forEach(personElement => {
+    personDropdown.appendChild(personElement);
+});
+
+document.querySelector('input[name="intr-btn"]').addEventListener('click',
+personObjects[personDropdown.value].introduce);
+```
+
+n. What would the output be if the `EventListener` that calls `introduce` gets encapsulated into an arrow-function? Also explain why the output would change at all.
 
 ## 4. Advanced JavaScript
+
+a. Explain which concepts exist in JavaScript to handle asynchronuos code.
+
+b. Explain how asynchronous execution is implemented into the JavaScript engine.
+
+c. Write a function `executeFunctionNTimesAfterDelay` that takes three parameters
+
+- a function `func`
+- a number `numberOfExecutions`
+- a number `delayInMs`
+
+The given `func` should get executed `numberOfExecutions` times. Your implementation should wait `delayInMs` milliseconds before the first execution of `func`. An error should be signaled if `numberOfExecutions > 100` by outputting `Execution threshold overflow` onto the console. In the case of successful execution, the text `Function executed <n> times` should get printed.
+
+d. Write JS code that issues a `POST` request to `http://www.loginservice.xyz/login`. The request body should contain the following content:
+
+```javascript
+{
+    username: 'user',
+    password: '123456',
+    maxLoginAttempts: 5
+}
+```
 
 ## 5. node.js
 
