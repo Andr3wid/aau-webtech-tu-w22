@@ -1,0 +1,6 @@
+<div id="card-container">
+  <app-weather-card
+    *ngFor="let weatherDataItem of retrievedWeatherData"
+    [data]="weatherDataItem"
+  ></app-weather-card>
+</div>

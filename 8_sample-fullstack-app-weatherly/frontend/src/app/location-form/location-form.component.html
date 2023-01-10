@@ -1,0 +1,23 @@
+<h2>Add new location</h2>
+
+<form>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput name="location-name" placeholder="New York" [(ngModel)]="locationFormContent.name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Latitude</mat-label>
+    <input matInput name="latitude" placeholder="123.456" [(ngModel)]="locationFormContent.latitude" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Longitude</mat-label>
+    <input matInput name="longitude" placeholder="123.456" [(ngModel)]="locationFormContent.longitude" />
+  </mat-form-field>
+
+  <div id="button-row">
+    <button mat-button routerLink="/home">Cancel</button>
+    <button mat-raised-button color="primary" (click)="onSave($event)">Save</button>
+  </div>
+</form>

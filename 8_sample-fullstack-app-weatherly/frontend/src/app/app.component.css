@@ -1,0 +1,9 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+#main-content-wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 10vh;
+}

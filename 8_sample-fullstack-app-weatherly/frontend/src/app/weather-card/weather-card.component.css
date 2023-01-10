@@ -1,0 +1,36 @@
+.card-wrapper {
+  width: 12vw;
+  height: 25vh;
+  border-radius: 10px;
+  padding: 25px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(237, 237, 237, 1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(237, 237, 237, 1);
+  box-shadow: 10px 10px 5px 0px rgba(237, 237, 237, 1);
+
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-name h2 {
+  color: #DDD;
+  font-size: 2.5em;
+}
+
+.weather-description {
+  font-size: 2em;
+  color: #BBB;
+}
+
+.temperature {
+  color: #DDD;
+  font-size: 3em;
+}
+
+.action-button-container {
+  display: flex;
+  justify-content: flex-end;
+}

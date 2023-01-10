@@ -1,8 +1,10 @@
 const express = require('express');
 const DbService = require('../services/DbService');
 const locationRouter = express.Router();
+const cors = require('cors');
 
 locationRouter.use(express.json());
+locationRouter.use(cors());
 
 locationRouter.get('/', (req, res) => {
     DbService.getAllLocations()

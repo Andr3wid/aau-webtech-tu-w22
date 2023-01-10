@@ -1,0 +1,15 @@
+<div
+  class="card-wrapper"
+  [style.background-image]="'url(/assets/' + getBackgroundImageName() + ')'"
+>
+  <div class="location-name">
+    <h2>{{ data.name }}</h2>
+  </div>
+  <div class="weather-description">{{ data.description }}</div>
+  <div class="temperature">{{ data.temperature }} °C</div>
+  <div class="action-button-container">
+    <button mat-mini-fab color="accent" (click)="onClickDelete(data.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>
